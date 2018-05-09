@@ -1,0 +1,58 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+
+    // getting pages under home
+    var pages = Model.Content.Site().Children();
+
+ }
+
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="index.html"><img src="Assets/images/logo.png" alt=""></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto"></ul>
+                    <ul class="navbar-nav">
+                        @foreach (var page in pages)
+                        {
+                            var cssClass = "nav-item";
+                            if(page.Id == Model.Content.Id)
+                            {
+                                cssClass += "active";
+                            }
+                        <li><a class="@cssClass" href="@page.Url">@page.Name</a></li>
+                        }
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i data-feather="bell"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-styles" aria-labelledby="navbarDropdown">
+                                <ul class="col-10 offset-1">
+                                    <li><strong>Nyheder</strong><span><a href="#"><i data-feather="settings"></i></a></span></li>
+                                </ul>
+                                <br>
+                                <div class="col-10 offset-1" style="background-image:url('../../build/images/event-img@2x_overlay.png');">
+                                    <span class="clockdate"><i data-feather="clock"></i> <span>26-10-2017</span></span>
+                                    <span>Ferie Camp 2017 (LVS, Nyheder) portrætter</span>
+                                    <span><a href="#">Læs hele nyheden</a></span>
+                                </div>
+                                <br>
+                                <div class="col-10 offset-1" style="background-image:url('../../build/images/fodspor.png');">
+                                    <span class="clockdate"><i data-feather="clock"></i> <span>26-10-2017</span></span>
+                                    <span>Ferie Camp 2017 (LVS, Nyheder) portrætter</span>
+                                    <span><a href="#">Læs hele nyheden</a></span>
+                                </div>
+                                <br>
+                                <a class="facebookbutton" href="#facebooksite"><i data-feather="facebook"></i> <span>Se Facebook nyheder</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
