@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "_Master.cshtml";
+}
+
+    home
+
+
+<hr>
+
+
+@{
+    var newsCategories = Model.Content.Site().Descendants<NewsCategory>();
+}
+<h1>Categories</h1>
+<ul>
+    @foreach (var newsCategory in newsCategories)
+    {
+       
+
+        <li>
+            <a href="@newsCategory.Url">@newsCategory.Name</a>
+            <ul>
+                
+            </ul>
+        </li>
+    }
+
+</ul>
+
+<hr />
