@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.SheltersPage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "_Master.cshtml";
+}
+
+<section class="container module_hero_section text-center " style="background-image:url(@Model.Content.Picture.Url)">
+    <div class="row">
+        <div class="module_hero_card col-lg-7 rellax" data-rellax-speed="1.5">
+            <h1 class="underline">@Model.Content.Headline</h1>
+            @Model.Content.BodyText
+        </div>
+    </div>
+</section>
+
+<section class="findværested d-flex align-items-center" style="background-image: url(~/Assets/images/map.png)">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <h1 class="underline text-uppercase">@Model.Content.SecondHeadline</h1>
+                @Model.Content.Paragraph
+            </div>
+            <div class="container-fluid search_box">
+                <div class="row">
+                    <div class="col-2 col-sm-1 search_icon"><i data-feather="search"></i></div><input type="text" class="col-9 offset-1 col-sm-10 offset-sm-1 h2" id="myInput" onkeyup="myFunction()" placeholder="Søg ..">
+                </div>
+            </div>
+        </div>
+
+        <div class="container shelters">
+            <ul class="row" id="myUL">
+                
+                <li class="col-6 col-md-4">
+                    <a href="#">
+                        <div class="row findværested_box">
+                            <div class="col-12 findværested_box_content">
+                                <div class="row d-flex align-items-center">
+                                    <p class="col-12">Café Mælkevejen</p>
+                                    <p class="col-12">Højstrupvej 59<br /> 5200 Odense V</p>
+                                </div>
+                            </div>
+                            <div class="col-12 contact_info_shelter">
+                                <div class="row">
+                                    <button class="col-6 map_shelter" onclick="location.href='https://maps.google.com/?q=Højstrupvej 59, Odense Municipality, Odense V'" type="button">
+                                        <i data-feather="navigation"></i><span>Route</span>
+                                    </button>
+                                    <button class="col-6 vl" onclick="location.href='tel:+4563755680'" type="button">
+                                        <i data-feather="phone"></i><span>63 75 56 80</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+</section>
