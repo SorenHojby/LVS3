@@ -84,21 +84,20 @@
         </div>
        
         <div class="row">
-            
-            @foreach (var employee in Model.Content.Employees)
+            @foreach (var item in Model.Content.Employees)
             {
+                SingleEmployeeItem items = (SingleEmployeeItem)item;
+
                 <div class="col-lg-4 col-md-6">
                     <img src="build/images/employee1.jpeg" alt="">
 
                     <div class="overlay">
                         <div class="text">
-                            <p>
-                                Cliff Kaltoft
-                                <br>Sekretariatschef
-                                <br>
-                                <br>lvsinfo@lavs.dk
-                                <br>Tlf. 75 92 40 00
-                            </p>
+                            @items.NameOfTheEmployee
+                            <br />@items.Position
+                            <br />
+                            <br />@items.ContactMail
+                            <br />@items.Phonenumber
                         </div>
                     </div>
                 </div>
