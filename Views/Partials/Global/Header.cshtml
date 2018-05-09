@@ -2,6 +2,7 @@
 @{
 
     // getting pages under home
+    var home = Model.Content.Site();
     var pages = Model.Content.Site().Children();
 
  }
@@ -9,7 +10,7 @@
     <header>
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index.html"><img src="Assets/images/logo.png" alt=""></a>
+                <a class="navbar-brand" href="index.html"><img src="~/Assets/images/logo.png" alt=""></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -17,14 +18,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto"></ul>
                     <ul class="navbar-nav">
+                        @{ var activePage = "";
+                         if (home.Id == Model.Content.Id) { activePage = "active"; }
+                        <li class="nav-item"><a class="@activePage nav-link " href="/">@home.Name</a></li>
+                            }
                         @foreach (var page in pages)
                         {
                             var cssClass = "nav-item";
-                            if(page.Id == Model.Content.Id)
+                            if (page.Id == Model.Content.Id)
                             {
                                 cssClass += "active";
                             }
-                        <li><a class="@cssClass" href="@page.Url">@page.Name</a></li>
+                            <li class="nav-item"><a class="@cssClass nav-link" href="@page.Url">@page.Name</a></li>
                         }
 
                         <li class="nav-item dropdown">
