@@ -18,6 +18,8 @@
 **/Global.asax
 **/LVSv3.csproj
 **/LVSv3.csproj.user
+**/lvs_website.csproj.csproj
+**/lvs_website.csproj.user
 **/packages.config
 **/Web.config
 **/Web.Debug.config
