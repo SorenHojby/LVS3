@@ -1,5 +1,72 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.SingleEvent>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "_Master.cshtml";
+    Layout = "_Master.cshtml";
 }
+
+<div class="container">
+    <div class="row breadcrumbs">
+        <div class="col-12 bc">
+            <a href="@Model.Content.Parent.Url">
+                <i data-feather="arrow-left-circle"></i>
+                <span class="backtextlink">Tilbage til oversigt</span>
+            </a>
+        </div>
+        <div class="col-12" style="display:block;">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Nyheder</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Ferie Camp 2017 (LVS, Nyheder) portrætter</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1 single_event_heading_bg">
+            <div class="single_event_title">
+                <h1>
+                    @Model.Content.Headline
+                </h1>
+            </div>
+            <div class="single_event_thumbnail">
+                <div class=" d-flex justify-content-center" style="background-image: url('@Model.Content.Picture.Url');"></div>
+            </div>
+
+
+        </div>
+        <div class=" col-lg-8 offset-lg-2 ">
+            <div class="single_event_content">
+                
+                   @Model.Content.BodyText
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="single_event_cta col-lg-8 offset-lg-2">
+            <div class="single_event_wrapper d-flex align-items-center justify-content-between">
+                <button class="single_event_halfwidth">
+                    TILMELD
+                </button>
+                <div class="single_event_cta_info d-flex">
+                    <i data-feather="clock"></i>
+                    <p>@Model.Content.Date.ToString("HH:hh")</p>
+                    <i data-feather="map-pin"></i>
+                    <p>@Model.Content.Place</p>
+                </div>
+                <div class="single_event_sharing d-flex ">
+                    <p>Del</p>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     
+
+  
