@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ProjectCategory>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "_Master.cshtml";
+    var typedMultiNodeTreePicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("itemPicker");
+}
+
+
+<section class="container module_news_card_overview ">
+     <div class="row">
+            <div class="col-3 searchbar">
+                <div class="input-group">
+                    <i data-feather="search"></i>
+                    <input type="text" class="form-control" id="myInput" onkeyup="searchForNews()" placeholder="Søg" >
+                </div>
+             </div>
+        </div>
+    <div class="row">
+        <h2 class="underline h1">Categori: @Model.Content.Name</h2>
+    </div>
+    <div class="row">
+
+        @foreach (var item in typedMultiNodeTreePicker)
+    {
+        <div class="col-lg-4">
+            <div class="module_news_card">
+                <div class="thumbnail">
+                    <img src="" alt="">
+                </div>
+                <div class="news_card_text">
+                    <div class="d-flex align-items-center">
+                        <i data-feather="clock"></i>
+                        <p>@item.CreateDate.ToString("MM-MM-yyyy")</p>
+                    </div>
+                    <p class="news_heading">@item.Name</p>
+                </div>
+                <div class="news_card_cta d-flex align-items-center  justify-content-between">
+                    <div class="news_likes d-flex">
+                        <i data-feather="heart"></i>
+                        <p>56</p>
+                    </div>
+                    <div class="line">
+                    </div>
+                    <div class="cta">
+                        <a href="@item.Url">Læs hele nyheden </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+}
+
+
+
+
+
+
+
+    </div>
+</section>
