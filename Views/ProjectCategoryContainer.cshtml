@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ProjectCategoryContainer>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
@@ -51,28 +50,4 @@
         </div>
         </div>
       </section>
-=======
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ProjectCategoryContainer>
-@using ContentModels = Umbraco.Web.PublishedContentModels;
-@{
-    Layout = "_Master.cshtml";
-    var item = Model.Content.Children<ProjectCategory>();
-}
 
-
-@foreach (var items in item) { 
-
-<section class="container module_hero_section text-center " style="background-image:url('@items.Picture.Url')">
-    <div class="row">
-        <div class="module_hero_card col-lg-7 rellax" data-rellax-speed="1.5">
-            <h1 class="underline">@items.Headline</h1>
-            <p class="text-left">
-                @items.BodyText
-            </p>
-
-        </div>
-    </div>
-</section>
-
-}
->>>>>>> d125ee2e0e80e559d90417a272dc09d9f8dc484c
