@@ -3,3 +3,94 @@
 @{
 	Layout = "_Master.cshtml";
 }
+<section class="single_news">
+    <div class="container ">
+        <div class="row breadcrumbs">
+            <div class="col-12 bc">
+                <a href="news.html">
+                    <i data-feather="arrow-left-circle"></i>
+                    <span class="backtextlink">Tilbage til oversigt</span>
+                </a>
+            </div>
+            <div class="col-12" style="display:block;">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Nyheder</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Ferie Camp 2017 (LVS, Nyheder) portrætter</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 single_news_heading_bg">
+                <div class="single_news_title">
+                    <h1>@Model.Content.Headline</h1>
+                </div>
+                <div class="single_news_thumbnail">
+                    <div class=" d-flex justify-content-center" style="background-image: url(@Model.Content.Picture.Url);"></div>
+                </div>
+
+
+            </div>
+            <div class=" col-lg-8 offset-lg-2 ">
+                <div class="single_news_content">
+                    @Model.Content.BodyText
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row news_content">
+            <div class="single_news_cta col-lg-8 offset-lg-2">
+                <div class="single_news_cta_info  d-flex">
+                    <div class="authorbox">
+                        <img src="@Model.Content.AuthorPicture.Url" alt="" class="author">
+                        <p>@Model.Content.AuthorName</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row news_content">
+            <div class="single_news_cta col-lg-8 offset-lg-2">
+                <div class="single_news_cta_info d-flex">
+                    Tags
+                    <br>
+                    <br>
+                </div>
+                <div class="single_news_cta_info d-flex">
+                    @foreach (var tag in Model.Content.Tags)
+                    {
+
+                        <div class="badge badge-secondary">@tag</div>
+                    }
+                </div>
+                <br>
+                <br>
+            </div>
+
+        </div>
+        <div class="row news_content">
+            <div class="single_news_cta col-lg-8 offset-lg-2">
+                <div class="single_news_wrapper d-flex align-items-center justify-content-between">
+
+                    <div class="single_news_cta_info d-flex">
+                        <i data-feather="heart"></i>
+                        <p>56</p>
+                    </div>
+                    <div class="single_news_cta_info d-flex">
+                        <i data-feather="eye"></i>
+                        <p>67367</p>
+                    </div>
+                    <div class="single_news_sharing d-flex ">
+                        <p>Del</p>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
