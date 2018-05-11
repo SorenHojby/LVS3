@@ -19,10 +19,22 @@
             <div class="col-12" style="display:block;">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#">Nyheder</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Ferie Camp 2017 (LVS, Nyheder) portrætter</li>
+                        @{ var selection = Model.Content.Ancestors().ToArray(); }
+
+                        @if (selection.Length > 0)
+    {
+                    <ul class="breadcrumb">
+                        @* For each page in the ancestors collection which have been ordered by Level (so we start with the highest top node first) *@
+                        @foreach (var item in selection.OrderBy(x => x.Level))
+    {
+                    <li><a href="@item.Url">@item.Name</a> <span class="divider">/</span></li>
+}
+
+                        @* Display the current page as the last item in the list *@
+                        <li class="active">@Model.Content.Name</li>
+                    </ul>
+}
+                        </ul>
                     </ol>
                 </nav>
             </div>
