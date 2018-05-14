@@ -1,11 +1,10 @@
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.SingleNewsItem>
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.SingleProjectItem>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
+
 @{
     Layout = "_Master.cshtml";
-
 }
 
- 
 
 
 <section class="single_news">
@@ -35,6 +34,7 @@
                         <li class="active">@Model.Content.Name</li>
                     </ul>
 }
+                        </ul>
                     </ol>
                 </nav>
             </div>
