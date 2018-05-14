@@ -27,8 +27,7 @@ $('#module_calender_list_view').click(function () {
 
 
 
-
-
+// Sign up Javascript
 
 
 
@@ -150,34 +149,13 @@ $('#module_calender_list_view').click(function () {
             }
         }
 
-        //for search box
-        function myFunction() {
-            // Declare variables
-            var input, filter, ul, li, a, i;
-            input = document.getElementById('myInput');
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("myUL");
-            li = ul.getElementsByTagName('li');
 
-            // Loop through all list items, and hide those who don't match the search query
-            for (i = 0; i < li.length; i++) {
-            a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
+        function on() {
+            document.getElementById("overlay").style.display = "block";
         }
-            }
+        function off() {
+            document.getElementById("overlay").style.display = "none";
         }
-
-
-
-    function on() {
-        document.getElementById("overlay").style.display = "block";
-    }
-    function off() {
-        document.getElementById("overlay").style.display = "none";
-    }
 
 
 
@@ -192,19 +170,44 @@ $('#module_calender_list_view').click(function () {
 
         // When the user clicks the button, open the modal
         btn.onclick = function () {
-                modal.style.display = "block";
-            }
+            modal.style.display = "block";
+        }
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
-                    modal.style.display = "none";
-                }
+            modal.style.display = "none";
+        }
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == modal) {
-                    modal.style.display = "none";
-                }
+                modal.style.display = "none";
+            }
         }
-  
+
+
+
+
+
+   //for search box
+    function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+    li[i].style.display = "";
+    } else {
+    li[i].style.display = "none";
+    }
+    }
+    }
+
+
 
