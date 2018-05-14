@@ -679,14 +679,6 @@ footer .copy-line p {
   margin-left: 15px;
 }
 
-.module_news_card_overview .searchbar div svg {
-  margin-top: 5px;
-}
-
-.module_news_card_overview .searchbar #myInput {
-  border: none;
-}
-
 .module_news_card_overview .underline {
   margin: auto auto 100px auto;
 }
@@ -749,63 +741,25 @@ footer .copy-line p {
   color: #018090;
 }
 
-/* SINGLE NEWS */
-.single_news .single_news_thumbnail {
-  margin-bottom: 25px;
+.module_news_card_single .news_content h1 {
+  font-size: 2rem;
 }
 
-.single_news .single_news_thumbnail div {
-  background-image: url(build/images/2014_08_08_LVS_Sommerfest_Fredag-556.png);
-  height: 450px;
-  object-fit: contain;
-  background-size: 100%;
-  background-repeat: no-repeat;
+.module_news_card_single .news_content .imagebox {
+  top: 0px;
+  position: relative;
+  background-image: url("../../build/images/news_big_img_1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  width: 100vw;
 }
 
-.single_news .single_news_wrapper {
-  padding: 1.5rem 6rem;
-  border-width: 1px 0px 2px 0px;
-  border-style: solid;
-  border-color: rgba(56, 64, 71, 0.1);
-  height: 100%;
-}
-
-.single_news .single_news_wrapper p {
-  padding: 0px;
-  margin: 0px;
-  line-height: initial;
-}
-
-.single_news .single_news_cta_info p {
-  padding-left: 0.5rem;
-  padding-right: 1rem;
-}
-
-.single_news .single_news_cta_info .badge {
-  margin-left: 0.5rem;
-  padding: 0.5rem;
-  letter-spacing: 0.1rem;
-}
-
-.single_news .single_news_cta_info .author {
-  width: 50px;
-  height: 50px;
-}
-
-.single_news .single_news_cta_info .authorbox {
-  line-height: 50px;
-  vertical-align: middle;
-}
-
-.single_news .single_news_cta_info .authorbox p {
-  display: inline-block;
-  padding-left: 1rem;
-}
-
-.single_news .single_news_sharing i {
-  margin: 0 1rem;
-  color: #384047;
-  opacity: 0.8;
+.module_news_card_single .news_content .text_content {
+  position: relative;
+  top: 75px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .module_calender svg {
@@ -1443,7 +1397,6 @@ footer .copy-line p {
   border-width: 1px 0px 2px 0px;
   border-style: solid;
   border-color: rgba(56, 64, 71, 0.1);
-  height: 100%;
 }
 
 .single_event .single_event_halfwidth {
@@ -1482,7 +1435,6 @@ footer .copy-line p {
   bottom: 0;
   background-color: rgba(56, 64, 71, 0.38);
   z-index: 200;
-  /*form styles*/
 }
 
 #overlay #msform {
@@ -1497,7 +1449,25 @@ footer .copy-line p {
   /*titles*/
 }
 
-#overlay #msform fieldset {
+#overlay #msform .row {
+  position: relative;
+}
+
+#overlay #msform .row #closeBtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 99;
+}
+
+#overlay #msform .row #closeBtn svg:not(:root) {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  color: lightslategray;
+}
+
+#overlay #msform .row fieldset {
   background: white;
   border: 0 none;
   padding: 90px 90px 10px;
@@ -1506,43 +1476,42 @@ footer .copy-line p {
   position: relative;
 }
 
-#overlay #msform fieldset #successPopUp {
+#overlay #msform .row fieldset #successPopUp {
   background-color: #03c399;
   color: white;
   margin: 0 auto;
   padding: 45px 105px 95px;
 }
 
-#overlay #msform fieldset #successPopUp svg:not(:root) {
+#overlay #msform .row fieldset #successPopUp svg:not(:root) {
   width: 3rem;
   height: 3rem;
   vertical-align: middle;
   color: white;
 }
 
-#overlay #msform fieldset label {
+#overlay #msform .row fieldset label {
   width: 187px;
   height: 187px;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
 }
 
-#overlay #msform fieldset label figure .far.fa-calendar::before, #overlay #msform fieldset label figure .fas.fa-child::before {
+#overlay #msform .row fieldset label figure .far.fa-calendar::before, #overlay #msform .row fieldset label figure .fas.fa-child::before {
   font-size: 72px;
   color: #018090;
 }
 
-#overlay #msform fieldset label figure figcaption {
+#overlay #msform .row fieldset label figure figcaption {
   padding-top: 20px;
   color: #384047;
   font-weight: 1000;
 }
 
-#overlay #msform fieldset label input[type=checkbox] {
+#overlay #msform .row fieldset label input[type=checkbox] {
   display: none;
 }
 
-#overlay #msform fieldset label + input[type=checkbox]:checked {
-  border: 2px solid red;
+#overlay #msform .row fieldset .yellowed {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
 }
 
 #overlay #msform fieldset:not(:first-of-type) {
