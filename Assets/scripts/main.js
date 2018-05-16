@@ -26,6 +26,16 @@ $('#module_calender_list_view').click(function () {
 });
 
 
+//Module Calender Search Script
+$("#module_calender_search").on('keyup', function () {
+    var matcher = new RegExp($(this).val(), 'gi');
+    $('.module_news_card_wrapper').show().not(function () {
+        return matcher.test($(this).find('.item-search , .news_card_date').text())
+    }).hide();
+});
+
+
+
 
 // Sign up Javascript
 

@@ -3,6 +3,8 @@
 @{
     Layout = "_Master.cshtml";
     var Events = Model.Content.Children<SingleEvent>();
+    var cultureinfo =
+        new System.Globalization.CultureInfo("da-DA");
 }
 
 
@@ -61,14 +63,14 @@
 
 
             <div class="col-lg-10 module_calender_wrapper" style="visibility: visible; ">
-                <div>
+                <div style="width:100%;">
                     <a href="@Event.Url">
                         <div class="module_calender_card">
 
                             <div class="module_calender_card_img_wrapper">
                                 <div class="module_calender_date ">
                                     <p class="p_lead">@Event.Date.ToString("dd")</p>
-                                    <p class="p_lead">@Event.Date.ToString("MMM")</p>
+                                    <p class="p_lead">@Event.Date.ToString("MMM", cultureinfo)</p>
                                 </div>
                                 <div class="module_calender_img">
                                     <img src="@Event.Picture.Url" alt="@Event.Picture.Name">
