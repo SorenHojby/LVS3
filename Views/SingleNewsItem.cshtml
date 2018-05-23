@@ -5,8 +5,6 @@
 
 }
 
- 
-
 
 <section class="single_news">
     <div class="container ">
@@ -21,20 +19,18 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         @{ var selection = Model.Content.Ancestors().ToArray(); }
-
                         @if (selection.Length > 0)
-    {
-                    <ul class="breadcrumb">
-                        @* For each page in the ancestors collection which have been ordered by Level (so we start with the highest top node first) *@
-                        @foreach (var item in selection.OrderBy(x => x.Level))
-    {
-                    <li><a href="@item.Url">@item.Name</a> <span class="divider">/</span></li>
-}
-
-                        @* Display the current page as the last item in the list *@
-                        <li class="active">@Model.Content.Name</li>
-                    </ul>
-}
+                        {
+                            <ul class="breadcrumb">
+                                @* For each page in the ancestors collection which have been ordered by Level (so we start with the highest top node first) *@
+                                @foreach (var item in selection.OrderBy(x => x.Level))
+                                {
+                                    <li><a href="@item.Url">@item.Name</a> <span class="divider">/</span></li>
+                                }
+                                @* Display the current page as the last item in the list *@
+                                <li class="active">@Model.Content.Name</li>
+                            </ul>
+                        }
                     </ol>
                 </nav>
             </div>
@@ -47,7 +43,6 @@
                 <div class="single_news_thumbnail">
                     <div class=" d-flex justify-content-center" style="background-image: url(@Model.Content.Picture.Url);"></div>
                 </div>
-
 
             </div>
             <div class=" col-lg-8 offset-lg-2 ">
@@ -85,12 +80,10 @@
                 <br>
                 <br>
             </div>
-
         </div>
         <div class="row news_content">
             <div class="single_news_cta col-lg-8 offset-lg-2">
                 <div class="single_news_wrapper d-flex align-items-center justify-content-between">
-
                     <div class="single_news_cta_info d-flex">
                         <i data-feather="heart"></i>
                         <p>56</p>
@@ -100,13 +93,22 @@
                         <p>67367</p>
                     </div>
                     <div class="single_news_sharing d-flex ">
+                        @{
+                            string btntwitter = "https://twitter.com/intent/tweet?text=" + HttpUtility.UrlEncode(Model.Content.Name) + "&url=" + HttpUtility.UrlEncode(Model.Content.UrlWithDomain());
+
+                            string btnfacebook = "http://www.facebook.com/sharer.php?u=" + HttpUtility.UrlEncode(Model.Content.UrlWithDomain());
+
+                            string btnlinkedin = "http://www.linkedin.com/shareArticle?url=<'@CurrentURL'" + HttpUtility.UrlEncode(Model.Content.UrlWithDomain())+ ">&title=<'" + HttpUtility.UrlEncode(Model.Content.Name) + "'>&summary=<SUMMARY>&source=<" + HttpUtility.UrlEncode(Model.Content.UrlWithDomain()) + ">";
+                        }
+
                         <p>Del</p>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn-linkedin" rel="nofollow" target="_blank" href="@btnlinkedin"><i class="fab fa-linkedin"></i></a>
+                        <a class="btn-twitter" rel="nofollow" target="_blank" href="@btntwitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn-facebook" rel="nofollow" target="_blank" href="@btnfacebook"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
