@@ -1,4 +1,18 @@
-﻿
+﻿//Frontpage countdown script
+
+$('.count').each(function () {
+    $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+    }, {
+            duration: 3000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+});
+
+
 //Grid & List view script
 $(document).ready(function () {
     $('#list').click(function (event) { event.preventDefault(); $('#products .item').addClass('list-group-item'); });
@@ -39,7 +53,12 @@ $("#module_calender_search").on('keyup', function () {
 
 // Sign up Javascript
 
-
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
 
   //choosing options on step 3 (checkboxes)
         $("#option-one").click(function (e) {
@@ -160,12 +179,7 @@ $("#module_calender_search").on('keyup', function () {
         }
 
 
-        function on() {
-            document.getElementById("overlay").style.display = "block";
-        }
-        function off() {
-            document.getElementById("overlay").style.display = "none";
-        }
+    
 
 
 

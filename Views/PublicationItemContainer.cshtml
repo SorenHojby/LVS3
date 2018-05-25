@@ -7,15 +7,15 @@
 
 
 <section class="container module_news_card_overview module_calender  ">
-    <div class="row">
-        <div class="module_calender_controll  d-flex justify-content-between">
-            <div class="module_calender_filtering d-flex align-items-center">
-                <div class="module_calender_search d-flex " id="module_search_toggle">
-                    <input type="text" placeholder="Søg..." name="" id="module_calender_search" style="background:url(/Assets/images/icons/search.svg) no-repeat 12px 12px;">
+        <div class="row">
+            <div class="module_calender_controll  d-flex justify-content-between">
+                <div class="module_calender_filtering d-flex align-items-center">
+                    <div class="module_calender_search d-flex " id="module_search_toggle">
+                        <input type="text" placeholder="Søg..." name="" id="module_calender_search" style="background:url(/Assets/images/icons/search.svg) no-repeat 12px 12px;">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <div class="row">
         <h2 class="underline h1">@Model.Content.Name</h2>
@@ -31,7 +31,7 @@
                         <img src="@item.Picture.Url" alt="@item.Picture.Name">
                     </div>
                     <div class="news_card_text">
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center news_card_date">
                             <i data-feather="clock"></i>
                             <p>@item.CreateDate.ToString("dd-MM-yyyy")</p>
                         </div>
