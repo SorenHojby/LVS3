@@ -679,6 +679,14 @@ footer .copy-line p {
   margin-left: 15px;
 }
 
+.module_news_card_overview .searchbar div svg {
+  margin-top: 5px;
+}
+
+.module_news_card_overview .searchbar #myInput {
+  border: none;
+}
+
 .module_news_card_overview .underline {
   margin: auto auto 100px auto;
 }
@@ -741,25 +749,67 @@ footer .copy-line p {
   color: #018090;
 }
 
-.module_news_card_single .news_content h1 {
-  font-size: 2rem;
+/* SINGLE NEWS */
+.single_news .single_news_thumbnail {
+  margin-bottom: 25px;
 }
 
-.module_news_card_single .news_content .imagebox {
-  top: 0px;
-  position: relative;
-  background-image: url("../../build/images/news_big_img_1.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 500px;
-  width: 100vw;
+.single_news .single_news_thumbnail div {
+  background-image: url(build/images/2014_08_08_LVS_Sommerfest_Fredag-556.png);
+  height: 450px;
+  object-fit: contain;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
-.module_news_card_single .news_content .text_content {
-  position: relative;
-  top: 75px;
-  padding-left: 50px;
-  padding-right: 50px;
+.single_news .single_news_wrapper {
+  padding: 1.5rem 6rem;
+  border-width: 1px 0px 2px 0px;
+  border-style: solid;
+  border-color: rgba(56, 64, 71, 0.1);
+  height: 100%;
+}
+
+.single_news .single_news_wrapper p {
+  padding: 0px;
+  margin: 0px;
+  line-height: initial;
+}
+
+.single_news .single_news_cta_info p {
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+}
+
+.single_news .single_news_cta_info .badge {
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.single_news .single_news_cta_info .author {
+  width: 50px;
+  height: 50px;
+}
+
+.single_news .single_news_cta_info .authorbox {
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+.single_news .single_news_cta_info .authorbox p {
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+.single_news .single_news_sharing p, .single_news .single_news_sharing a {
+  padding: 10px;
+}
+
+.single_news .single_news_sharing p i, .single_news .single_news_sharing a i {
+  margin: 0 1rem;
+  color: #384047;
+  opacity: 0.8;
 }
 
 .module_calender svg {
@@ -1397,6 +1447,7 @@ footer .copy-line p {
   border-width: 1px 0px 2px 0px;
   border-style: solid;
   border-color: rgba(56, 64, 71, 0.1);
+  height: 100%;
 }
 
 .single_event .single_event_halfwidth {
@@ -1621,6 +1672,38 @@ footer .copy-line p {
   }
   #overlay #msform #progressbar li b {
     display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #moduel_countdown_btn {
+    display: none;
+  }
+  .module_hero_section {
+    margin-left: 0px !important;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .module_calender_view {
+    display: none !important;
+  }
+  .module_calender_wrapper {
+    flex-direction: column;
+    padding-right: 0px;
+    margin: 15px;
+  }
+  .module_calender_wrapper .module_calender_card {
+    flex-direction: column;
+  }
+  .module_calender_wrapper .module_calender_social_media {
+    flex-direction: row !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .module_calender_wrapper .module_calender_info {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 /*# sourceMappingURL=main.css.map */
