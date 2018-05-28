@@ -77,16 +77,18 @@
                 </div>
                 <div class="single_news_cta_info d-flex">
                     @foreach (var tag in Model.Content.Tags)
-                    {
+                {
 
-                        <div class="badge badge-secondary">@tag</div>
-                    }
+                    <div class="badge badge-secondary">@tag</div>
+            }
                 </div>
                 <br>
                 <br>
             </div>
 
         </div>
+
+
         <div class="row news_content">
             <div class="single_news_cta col-lg-8 offset-lg-2">
                 <div class="single_news_wrapper d-flex align-items-center justify-content-between">
@@ -117,5 +119,7 @@
                 </div>
             </div>
         </div>
+
+        @Html.Partial("Global/PublicationSignUp")
     </div>
 </section>
