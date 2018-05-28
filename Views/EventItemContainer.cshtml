@@ -2,11 +2,13 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "_Master.cshtml";
-    var Events = Model.Content.Children<SingleEvent>();
-    var cultureinfo =
-        new System.Globalization.CultureInfo("da-DA");
-}
+    var currentYear = DateTime.Now.ToString("yyyy");
+    var Events = Model.Content.Children<SingleEvent>().OrderBy(x => x.Date);
 
+
+    var cultureinfo = new System.Globalization.CultureInfo("da-DA");
+
+}
 
 
 
@@ -24,13 +26,9 @@
 
 <section class="container module_calender">
     <div class="row  d-flex align-items-center module_calener_heading justify-content-center">
-        <span>
-            <i data-feather="chevron-left"></i>
-        </span>
-        <h2 class="h1">Marts 2018</h2>
-        <span>
-            <i data-feather="chevron-right"></i>
-        </span>
+   
+        <h2 class="h1">@currentYear</h2>
+       
     </div>
     <div class="row  d-flex justify-content-center">
         <div class="col-lg-10  ">
@@ -58,9 +56,11 @@
     </div>
     <div class="row  d-flex justify-content-center" id="module_calender_row_list">
 
+    
         @foreach (var Event in Events)
+    {
+        if (Event.Date.Year.ToString() == currentYear)
         {
-
 
             <div class="col-lg-10 module_calender_wrapper" style="visibility: visible; ">
                 <div style="width:100%;">
@@ -103,9 +103,12 @@
                     <i class="fab fa-twitter"></i>
                 </div>
             </div>
-
-        }
+    }
+}
     </div>
 
 </section>
+<script>
 
+
+</script>
