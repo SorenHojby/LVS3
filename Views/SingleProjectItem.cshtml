@@ -100,10 +100,19 @@
                         <p>67367</p>
                     </div>
                     <div class="single_news_sharing d-flex ">
+                        @{
+        var twitterUrl = string.Format("https://twitter.com/share?url={0}", HttpUtility.UrlEncode(CurrentPage.UrlWithDomain()));
+        var fbUrl = string.Format("https://www.facebook.com/sharer/sharer.php?u={0}", HttpUtility.UrlEncode(CurrentPage.UrlWithDomain()));
+
+        var linkedinUrl = string.Format("https://www.linkedin.com/shareArticle?mini=true&url={0}", HttpUtility.UrlEncode(CurrentPage.UrlWithDomain()));
+
+                        }
                         <p>Del</p>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+
+
+                        <a class="btn-linkedin" rel="nofollow" target="_blank" href="@linkedinUrl"><i class="fab fa-linkedin"></i></a>
+                        <a class="btn-twitter" rel="nofollow" target="_blank" href="@twitterUrl"><i class="fab fa-twitter"></i></a>
+                        <a class="btn-facebook" rel="nofollow" target="_blank" href="@fbUrl" )"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
